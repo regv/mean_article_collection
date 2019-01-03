@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg navbar-dark">
+<a class="navbar-brand text-danger" [routerLink]="['/']">{{ navbarHeading }}</a>
+  <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+  aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavId">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li *ngIf="!dataService.loggedIn" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" >
+        <a class="nav-link" [routerLink]="['/']">HOME</a>
+      </li>
+      <li *ngIf="dataService.loggedIn" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" >
+        <a class="nav-link" [routerLink]="['/dashboard']">DASHBOARD</a>
+      </li>
+      <li *ngIf="dataService.loggedIn" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+        <a class="nav-link"  [routerLink]="['/post/add']">ADD POSTS</a>
+      </li>
+      <li *ngIf="dataService.loggedIn" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+        <a class="nav-link" [routerLink]="['/posts']">POSTS</a>
+      </li>
+      <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+        <a class="nav-link" [routerLink]="['/about']">ABOUT</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+          <a class="nav-link" href="http://www.github.com/rooneyrulz">GITHUB</a>
+      </li>
+      <li *ngIf="!dataService.loggedIn" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+        <a class="nav-link"  [routerLink]="['/register']">REGISTER</a>
+      </li>
+      <li *ngIf="!dataService.loggedIn" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+        <a class="nav-link" [routerLink]="['/login']">LOGIN</a>
+      </li>
+      <li *ngIf="dataService.loggedIn" class="nav-item">
+        <a (click)="onLogOut()" class="nav-link" href="#">LOGOUT</a>
+      </li>
+    </ul>
+  </div>
+</nav>

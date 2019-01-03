@@ -1,0 +1,36 @@
+<div class="mt-4">
+  <h1>{{ title }}</h1>
+  <hr>
+  <br>
+  <ng-container *ngIf="posts; else noPosts">
+    <div *ngFor="let post of posts" class="card my-3">
+      <div class="card-body">
+        <ul class="list-group">
+          <li class="list-group-item">
+            <strong>Title</strong>
+            <span class="float-right">{{ post.title }}</span>
+          </li>
+          <li class="list-group-item">
+            <strong>Body</strong>
+            <span class="float-right">{{ post.body }}</span>
+          </li>
+          <li class="list-group-item">
+            <strong>Author</strong>
+            <span class="float-right">{{ post.author }}</span>
+          </li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <button (click)="onEditPost(post._id)"  class="btn btn-primary mr-1">EDIT</button>
+        <button (click)="onDeletePost(post._id)" class="btn btn-danger">DELETE</button>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #noPosts>
+    <div class="card text-center">
+      <div class="card-body">
+        <p class="text-danger">No posts found yet, Add some posts..</p>
+      </div>
+    </div>
+  </ng-template>
+</div>

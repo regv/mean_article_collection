@@ -1,0 +1,27 @@
+<div class="mt-4">
+    <div>
+      <h1 class="">{{ title }}</h1>
+    </div>
+    <hr>
+    <br>
+    <div class="card">
+      <div class="card-body">
+        <form (submit)="onSubmit()">
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input id="title" name="postTitle" [(ngModel)]="postTitle" type="text" class="form-control" placeholder="Enter title...">
+          </div>
+          <div class="form-group">
+            <label for="body">Body</label>
+            <input id="body" name="postBody" [(ngModel)]="postBody" type="text" class="form-control" placeholder="Enter body...">
+          </div>
+          <div class="form-group">
+            <label for="author">Author</label>
+            <input id="author" name="postAuthor" [(ngModel)]="postAuthor" type="text" class="form-control" placeholder="Enter author...">
+          </div>
+          <button type="submit" class="btn btn-success">SAVE POST</button>
+        </form>
+      </div>
+    </div>
+  </div>
+

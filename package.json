@@ -1,0 +1,37 @@
+{
+  "name": "mean-app-1",
+  "version": "1.0.0",
+  "description": "Sample MEAN-Stack App",
+  "main": "server.js",
+  "scripts": {
+    "client-install": "npm install --prefix client",
+    "client": "npm start --prefix client",
+    "start": "node ./bin/server.js",
+    "server": "nodemon ./bin/server.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\" "
+  },
+  "keywords": [
+    "MEAN",
+    "APP"
+  ],
+  "author": "mr.rooney",
+  "license": "MIT",
+  "dependencies": {
+    "@types/passport-jwt": "^3.0.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.1.0",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.4.0",
+    "mongoose": "^5.4.0",
+    "morgan": "^1.9.1",
+    "multer": "^1.4.1",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  }
+}
